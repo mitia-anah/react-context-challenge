@@ -1,10 +1,12 @@
 import React from 'react';
-import UserContext from './userContext';
+import { UserContextConsumer } from './userContext';
 
 function Header() {
 	return (
 		<header>
-			<UserContext.Consumer>{username => <p>Welcome, {username}!</p>}</UserContext.Consumer>
+			<UserContextConsumer>
+				{context => <p>Welcome, {context.username}!</p>}
+			</UserContextConsumer>
 		</header>
 	);
 }
